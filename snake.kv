@@ -1,3 +1,17 @@
+<Grid>:
+    canvas:
+        Color:
+            rgba: (1, 1, 1, .1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (0, 0, 0, 1)
+        Rectangle:
+            pos: self.x + 1, self.y + 1
+            size: self.width - 2, self.height - 2
+
+
 <SnakeSegment>:
     canvas:
         Color:
@@ -20,28 +34,13 @@
     # Reference variables so the python file can modify the widgets
     fruit: snake_fruit
     snake: snake_snake
-    message_label: snake_message
-
-    # the border of the game
-    canvas.before:
-        Line:
-            width: 2
-            rectangle: root.x, root.y, self.width, root.height
 
     # score
     Label:
-        font_size: 40
-        x: 50
+        font_size: 50
+        x: 20
         top: root.top - 10
-        text: str(root.score)
-
-    # game over
-    Label:
-        id: snake_message
-        font_size: 40
-        center_x: root.width / 2
-        y: (root.height / 2)
-        text: str(root.message)
+        # text: str(root.score)
 
     SnakeFruit:
         id: snake_fruit
