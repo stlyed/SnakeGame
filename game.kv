@@ -1,0 +1,77 @@
+<Grid>:
+    canvas:
+        Color:
+            rgba: [1, 1, 1, .1]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: [0, 0, 0, 1]
+        Rectangle:
+            pos: self.x + 1, self.y + 1
+            size: self.width - 2, self.height - 2
+
+
+<Fruit>:
+    canvas:
+        Color:
+            rgba: [1, 0, 0, 1]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+
+<Segment>:
+    canvas:
+        Color:
+            rgba: [0, 1, 0, 1]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<Game>:
+    # line on top of the grid
+    canvas.before:
+        Color:
+            rgba: [1, 1, 1, 1]
+        Rectangle:
+            pos: [0, root.height * (8.85/10)]
+            size: [root.width, .5]
+
+    # score
+    Label:
+        text: 'Score: ' + str(root.score)
+        font_size: root.width / 24
+        pos: [root.width * (1/ 10), root.height * (8.5/10)]
+
+    # high score
+    Label:
+        text: 'High Score: ' + str(root.high_score)
+        font_size: root.width / 24
+        pos: [root.width * (7/ 10), root.height * (8.5/10)]
+
+
+<GameOver>:
+    size: self.size
+    Label:
+        text: str(root.title)
+        font_size: root.width / 10
+        center_x: root.width / 2
+        y: root.height / 2
+    Label:
+        text: str(root.subtitle)
+        font_size: root.width / 10
+        color: '#a64dff'
+        center_x: root.width / 2
+        y: root.height / 2.8
+
+    MDRectangleFlatButton:
+        text: 'Main Menu'
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1
+        line_color: 1, 1, 1, 1
+        center_x: root.width * (2/3)
+        y: root.height / 5
+        on_release: app.root.current = 'main'

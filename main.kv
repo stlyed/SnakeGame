@@ -1,0 +1,51 @@
+#:include game.kv
+
+WindowManager:
+    MainMenu:
+    SnakeGame:
+
+
+<MainMenu>:
+    name: 'main'
+
+    canvas.before:
+        Color:
+            rgba: [0, 0, 0, 1]
+        Rectangle:
+            size: [self.width, self.height]
+
+    Widget:
+        Label:
+            text: 'Snake Game'
+            font_size: root.width / 15
+            color: [1, 1, 1, 1]
+            center_x: root.width / 2
+            y: root.height / 2
+        Label:
+            text: 'by Smyvens'
+            font_size: root.width / 25
+            color: [1, 1, 1, .3]
+            center_x: root.width / 2
+            y: root.height / 2.5
+
+        MDRectangleFlatButton:
+            text: 'START'
+            font_size: root.width / 25
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            line_color: 1, 1, 1, 1
+            pos: [(root.width / 2) - (self.width / 2), root.height / 5]
+            on_release: app.root.current = 'game'
+
+<SnakeGame>:
+    name: 'game'
+
+    canvas.before:
+        Color:
+            rgba: [0, 0, 0, 1]
+        Rectangle:
+            size: [self.width, self.height]
+
+    # put Game class on the screen
+    Game:
+
