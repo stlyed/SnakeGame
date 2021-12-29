@@ -1,0 +1,107 @@
+<TheSettings>:
+    canvas.before:
+        Color:
+            rgba: [1, 1, 1, 1]
+        Rectangle:
+            pos: [0, root.height * (8.85/10)]
+            size: [root.width, .5]
+
+    Label:
+        text: 'SETTINGS'
+        font_size: root.width / 25
+        color: [1, 1, 1, 1]
+        center_x: root.width / 2
+        y: root.height * (8.4/10)
+
+    MDRectangleFlatButton:
+        text: 'MAIN MENU'
+        font_size: root.width / 35
+        theme_text_color: "Custom"
+        text_color: [1, 1, 1, 1]
+        line_color: [1, 1, 1, 1]
+        pos: [(root.width / 2) - (self.width / 2), root.height *  (1/10)]
+        on_release: app.root.current = 'main'
+
+
+
+    # controls Section
+    Label:
+        text: 'CONTROLS'
+        center_x: root.width / 2
+        y: root.height * (7.5/10)
+
+    MDRaisedButton:
+        id: move_up
+        text: root.move_up
+        font_size: root.width / 13
+        theme_text_color: "Custom"
+        text_color: [1, 0, 1, 1]
+        md_bg_color: [1, 1, 1, 1]
+        center_x: root.width / 2
+        y: root.height * (6.5/10)
+        on_press:
+    MDRaisedButton:
+        id: move_up
+        text: root.move_down
+        font_size: root.width / 13
+        theme_text_color: "Custom"
+        text_color: [1, 0, 1, 1]
+        md_bg_color: [1, 1, 1, 1]
+        center_x: root.width / 2
+        y: root.height * (5.1/10)
+        on_press:
+    MDRaisedButton:
+        id: move_up
+        text: root.move_left
+        font_size: root.width / 13
+        theme_text_color: "Custom"
+        text_color: [1, 0, 1, 1]
+        md_bg_color: [1, 1, 1, 1]
+        center_x: root.width / 2.68
+        y: root.height * (5.1/10)
+        on_press:
+    MDRaisedButton:
+        id: move_up
+        text: root.move_right
+        font_size: root.width / 13
+        theme_text_color: "Custom"
+        text_color: [1, 0, 1, 1]
+        md_bg_color: [1, 1, 1, 1]
+        center_x: root.width * (2.51/4)
+        y: root.height * (5.1/10)
+        on_press:
+
+
+    # difficulty section
+    Label:
+        text: 'DIFFICULTY'
+        center_x: root.width / 2
+        y: root.height * (3.5/10)
+
+    MDRaisedButton:
+        id: easy_button
+        text: 'Easy'
+        theme_text_color: "Custom"
+        text_color: [1, 1, 0, 1]
+        md_bg_color: [0, 0, 0, 1]
+        center_x: (root.width / 2) - (self.font_size * 10)
+        y: root.height * (2.8/10)
+        on_press: root.change_difficulty(4)
+    MDRaisedButton:
+        id: medium_button
+        text: 'Medium'
+        theme_text_color: "Custom"
+        text_color: [1, 0.5, 0, 1]
+        md_bg_color: [0, 0, 0, 1]
+        center_x: root.width / 2
+        y: root.height * (2.8/10)
+        on_press: root.change_difficulty(9)
+    MDRaisedButton:
+        id: hard_button
+        text: 'Hard'
+        theme_text_color: "Custom"
+        text_color: [1, .2, 0, 1]
+        md_bg_color: [0, 0, 0, 1]
+        center_x: (root.width / 2) + (self.font_size * 10)
+        y: root.height * (2.8/10)
+        on_press: root.change_difficulty(20)

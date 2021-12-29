@@ -35,7 +35,7 @@
     # line on top of the grid
     canvas.before:
         Color:
-            rgba: [1, 1, 1, 1]
+            rgba: [0, 1, 1, 1]
         Rectangle:
             pos: [0, root.height * (8.85/10)]
             size: [root.width, .5]
@@ -48,7 +48,7 @@
 
     # high score
     Label:
-        text: 'High Score: ' + str(root.high_score)
+        text: 'High Score: ' + str(root.high_score_text)
         font_size: root.width / 24
         pos: [root.width * (7/ 10), root.height * (8.5/10)]
 
@@ -63,7 +63,7 @@
     Label:
         text: str(root.subtitle)
         font_size: root.width / 10
-        color: '#a64dff'
+        color: [0, 1, 1, 1]
         center_x: root.width / 2
         y: root.height / 2.8
 
